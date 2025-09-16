@@ -44,25 +44,25 @@
 <header class="bg-white text-[#011A27] shadow-md sticky top-0 z-50">
     <nav class="container mx-auto px-1 py-2 flex justify-between items-center">
         <a href="index.php">
-            <img src="images/logo.png" alt="CarRent Logo" class="h-16 w-auto">
+            <img src="/../images/logo.png" alt="CarRent Logo" class="h-16 w-auto">
         </a>
 
         <!-- Menu for Desktop -->
         <div class="hidden md:flex items-center space-x-8 font-medium">
-            <a href="index.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Home</a>
-            <a href="bookings.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Bookings</a>
-            <a href="services.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Services</a>
-            <a href="blog.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Blog</a>
-            <a href="about-us.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">About Us</a>
-            <a href="contactus.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Contact Us</a>
+            <a href="/../index.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Home</a>
+            <a href="/../bookings.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Bookings</a>
+            <a href="/../pages/services.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Services</a>
+            <a href="/../blog.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Blog</a>
+            <a href="/../pages/about-us.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">About Us</a>
+            <a href="/../pages/contactus.php" class="text-[#011A27] hover:text-[#F0810F] transition duration-300">Contact Us</a>
         </div>
         
         <!-- Login/Register Buttons -->
         <div class="hidden md:flex items-center space-x-4">
-            <a href="login.php" class="bg-[#F0810F] text-white px-5 py-2 rounded-lg font-semibold hover:bg-[#E6DF44] hover:text-[#011A27] transition duration-300 transform hover:scale-105">
+            <a href="/../auth/login.php" class="bg-[#F0810F] text-white px-5 py-2 rounded-lg font-semibold hover:bg-[#E6DF44] hover:text-[#011A27] transition duration-300 transform hover:scale-105">
                 Login
             </a>
-            <a href="register.php"
+            <a href="/../auth/register.php"
    class="bg-[#F0810F] text-white px-5 py-2 rounded-lg font-semibold hover:bg-[#E6DF44] hover:text-[#011A27] transition duration-300 transform hover:scale-105">
    Register
 </a>
