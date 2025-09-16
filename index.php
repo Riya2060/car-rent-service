@@ -2,48 +2,113 @@
 
 <main>
     <!-- Hero Section -->
-    <section class="relative h-[92vh] w-full text-center text-white overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-[#011A27]"></div>
+<section class="relative h-[92vh] w-full text-center text-white overflow-hidden">
+    <!-- Slideshow Background + Overlay -->
+    <div id="heroSlideshow" class="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000">
+        <div class="absolute inset-0 bg-black/60"></div> <!-- semi-transparent overlay -->
+    </div>
 
-        <div class="relative z-20 flex flex-col items-center justify-center h-full px-6">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in">
-                Find Your <span class="text-[#F0810F]"><span id="animatedText"></span></span> Ride
-            </h1>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto fade-in fade-in-delay-1" id="heroCaption">
-                Over 30+ years of trusted service in vehicle care & rental. Experience the best with us.
-            </p>
-            <a href="packages.php" class="bg-[#F0810F] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#E6DF44] hover:text-[#011A27] transition duration-300 transform hover:scale-105 fade-in fade-in-delay-2">
-                Explore Packages
-            </a>
-        </div>
+    <div class="relative z-20 flex flex-col items-center justify-center h-full px-6">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in">
+            Find Your <span class="text-[#E6DF44]"><span id="animatedText"></span></span> Ride
+        </h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto fade-in fade-in-delay-1" id="heroCaption">
+            Over 30+ years of trusted service in vehicle care & rental. Experience the best with us.
+        </p>
+        <a href="pages/packages.php" class="bg-[#F0810F] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#E6DF44] hover:text-[#011A27] transition duration-300 transform hover:scale-105 fade-in fade-in-delay-2">
+            Explore Packages
+        </a>
+    </div>
 
-        <img src="images/car2.png" alt="Car Animation" class="car-animate">
-    </section>
+    <img src="images/car2.png" alt="Car Animation" class="car-animate">
+</section>
 
-    <!-- Services Section -->
-    <section class="py-20 px-6 bg-[#021017]">
-        <div class="container mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-2">Our <span class="text-[#F0810F]">Services</span></h3>
-            <p class="text-center text-gray-400 mb-12">We provide reliable car rental services with professional drivers and convenient booking options.</p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-8 text-center transition duration-500 transform hover:-translate-y-2 hover:scale-105 hover:bg-white/20 services-card">
-                    <img src="images/icon-booking.png" alt="On-time Booking" class="h-20 w-20 mx-auto mb-4 animate-bounce">
-                    <h4 class="text-2xl font-semibold text-[#F0810F] mb-3">On-time Booking</h4>
-                    <p class="text-gray-300">Book your car online easily and get guaranteed pickup at your scheduled time.</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-8 text-center transition duration-500 transform hover:-translate-y-2 hover:scale-105 hover:bg-white/20 services-card">
-                    <img src="images/icon-driver.png" alt="Driver Service" class="h-20 w-20 mx-auto mb-4 animate-bounce">
-                    <h4 class="text-2xl font-semibold text-[#F0810F] mb-3">Professional Driver</h4>
-                    <p class="text-gray-300">Experienced drivers provide safe and comfortable rides for all your trips.</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-8 text-center transition duration-500 transform hover:-translate-y-2 hover:scale-105 hover:bg-white/20 services-card">
-                    <img src="images/icon-support.png" alt="Customer Support" class="h-20 w-20 mx-auto mb-4 animate-bounce">
-                    <h4 class="text-2xl font-semibold text-[#F0810F] mb-3">24/7 Support</h4>
-                    <p class="text-gray-300">Our support team is available round the clock to assist you with bookings or inquiries.</p>
-                </div>
+<script>
+// Slideshow Images
+const bgImages = [
+    'images/hero-bg.jpg',
+    'images/hero-bg3.jpg',
+    'images/hero-bg5.jpg',
+    'images/hero-bg6.jpg'
+    
+
+];
+
+let currentIndex = 0;
+const heroSlideshow = document.getElementById('heroSlideshow');
+
+// Initial background
+heroSlideshow.style.backgroundImage = `url(${bgImages[0]})`;
+
+function changeBackground() {
+    // Fade out
+    heroSlideshow.style.opacity = 0;
+
+    setTimeout(() => {
+        heroSlideshow.style.backgroundImage = `url(${bgImages[currentIndex]})`;
+        heroSlideshow.style.opacity = 1;
+
+        currentIndex = (currentIndex + 1) % bgImages.length;
+    }, 500);
+}
+
+// Change every 5 seconds
+setInterval(changeBackground, 3000);
+</script>
+<!-- Booking Section -->
+<section class="py-20 px-6 bg-[#021017]">
+    <div class="container mx-auto max-w-4xl text-center">
+        <h3 class="text-4xl font-bold mb-4 text-white">
+            Book Your <span class="text-[#F0810F]">Ride Now</span>
+        </h3>
+        <p class="text-gray-400 mb-12">
+            Fill in your details below and get your vehicle booked instantly.
+        </p>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+            <input type="text" placeholder="Full Name" class="px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F0810F]">
+            <input type="email" placeholder="Email Address" class="px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F0810F]">
+            <input type="tel" placeholder="Phone Number" class="px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F0810F]">
+            <select class="px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F0810F]">
+                <option selected disabled>Select Vehicle Type</option>
+                <option>Sedan</option>
+                <option>SUV</option>
+                <option>Van</option>
+                <option>Luxury</option>
+            </select>
+            <input type="date" class="px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F0810F]">
+            <input type="time" class="px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F0810F]">
+            <textarea placeholder="Additional Notes" class="md:col-span-2 px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F0810F]" rows="3"></textarea>
+            <button type="submit" class="md:col-span-2 bg-[#F0810F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#E6DF44] hover:text-[#011A27] transition duration-300 transform hover:scale-105">
+                Book Now
+            </button>
+        </form>
+    </div>
+</section>
+<!-- Services Section -->
+<section class="py-20 px-6 bg-[#021017]">
+    <div class="container mx-auto">
+        <h3 class="text-4xl font-bold text-center mb-2">Our <span class="text-[#F0810F]">Services</span></h3>
+        <p class="text-center text-gray-400 mb-12">We provide reliable car rental services with professional drivers and convenient booking options.</p>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-8 text-center transition duration-500 transform hover:-translate-y-2 hover:scale-105 hover:bg-white/20 services-card">
+                <img src="images/ontime.png" alt="On-time Booking" class="h-28 w-28 mx-auto mb-4 object-cover rounded-full">
+                <h4 class="text-2xl font-semibold text-[#F0810F] mb-3">On-time Booking</h4>
+                <p class="text-gray-300">Book your car online easily and get guaranteed pickup at your scheduled time.</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-8 text-center transition duration-500 transform hover:-translate-y-2 hover:scale-105 hover:bg-white/20 services-card">
+                <img src="images/driver.jpg" alt="Driver Service" class="h-28 w-28 mx-auto mb-4 object-cover rounded-full">
+                <h4 class="text-2xl font-semibold text-[#F0810F] mb-3">Professional Driver</h4>
+                <p class="text-gray-300">Experienced drivers provide safe and comfortable rides for all your trips.</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-8 text-center transition duration-500 transform hover:-translate-y-2 hover:scale-105 hover:bg-white/20 services-card">
+                <img src="images/24hour.png" alt="Customer Support" class="h-28 w-28 mx-auto mb-4 object-cover rounded-full">
+                <h4 class="text-2xl font-semibold text-[#F0810F] mb-3">24/7 Support</h4>
+                <p class="text-gray-300">Our support team is available round the clock to assist you with bookings or inquiries.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Why Choose Us with Counters -->
     <section class="py-20 px-6 bg-[#011A27]">

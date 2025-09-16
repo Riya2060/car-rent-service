@@ -20,13 +20,13 @@
 <div class="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl w-full max-w-3xl flex overflow-hidden">
  <!-- Left Image (full left half) -->
     <div class="w-1/2 hidden md:flex items-center justify-center">
-        <img src="/../images/scorpio.jpg" alt="Register Car" class="object-cover h-full w-full">
+        <img src="../images/scorpio.jpg" alt="Register Car" class="object-cover h-full w-full">
     </div>
 
     <!-- Right Form -->
     <div class="w-full md:w-1/2 p-6 md:p-8 relative">
         <!-- Close Button -->
-        <a href="/../index.php" class="absolute top-4 right-4 text-gray-200 hover:text-white bg-white/5 hover:bg-white/10 p-2 rounded-full text-xl font-bold">✕</a>
+        <a href="../index.php" class="absolute top-4 right-4 text-gray-200 hover:text-white bg-white/5 hover:bg-white/10 p-2 rounded-full text-xl font-bold">✕</a>
 
         <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-4 md:mb-6">Create Your Account</h2>
 
